@@ -70,12 +70,12 @@ class _AddPageState extends State<AddPage> {
   }
 
   Future<String> _PostTask() async {
-    //https://5222-2001-fb1-d2-1cdc-954a-d4b-5281-57b.ngrok.io/api-post
+    //https://5f03-2001-fb1-d0-9e97-82d-2a88-1817-bdf9.ngrok.io/api-post
     var url = Uri.https(
-        '5222-2001-fb1-d2-1cdc-954a-d4b-5281-57b.ngrok.io', '/api-post');
+        '5f03-2001-fb1-d0-9e97-82d-2a88-1817-bdf9.ngrok.io', '/api-post');
     Map<String, String> headers = {"Content-tyoe": "application/json"};
-    var v1 = ctl_taskname;
-    var v2 = ctl_taskdetail;
+    var v1 = "ctl_taskname";
+    var v2 = "ctl_taskdetail";
     String jsondata = '{"task_name":"$v1", "task_detail":"$v2"}';
     var response = await http.post(url, headers: headers, body: jsondata);
 
@@ -88,5 +88,6 @@ class _AddPageState extends State<AddPage> {
       ctl_taskname.clear();
       ctl_taskdetail.clear();
     });
+    // return _PostTask();
   }
 }
